@@ -53,3 +53,29 @@ body {
     padding: 30px;
     margin-top: 25%;
 }
+
+
+/* TABLE - STYLING OF COLUMNS AND ROWS IN TABLE */
+
+* {
+    /* asterisk applies styling effects to all elements on the page */
+    box-sizing: border-box;
+}
+
+.column_1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3%;
+    height: 400px;
+    background-color: darkslategrey;
+}
+
+.column_2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 1.9%;
+    height: 400px;
+    background-color: darkslategrey;
+}
