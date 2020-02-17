@@ -1,0 +1,55 @@
+body {
+    margin: 0%;
+}
+
+
+/* NAVBAR */
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Avant Garde, Helvetica;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+/* NAVBAR HOVER EFFECT */
+
+.navbar a:hover {
+    background-color: #f4f4f4;
+    color: black;
+    font-weight: bold;
+}
+
+
+/* NAVBAR HOME BUTTON */
+
+.navbar a.active {
+    background-color: lightgrey;
+}
+
+
+/* VIDEO */
+
+#typing_video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+}
+
+
+/*TEXT OVER THE VIDEO */
+
+.video_text {
+    background: rgba(0, 0, 0, 0.5);
+    color: lightgrey;
+    width: 100%;
+    padding: 30px;
+    margin-top: 25%;
+}
