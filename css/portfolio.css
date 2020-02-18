@@ -110,7 +110,7 @@ h1 {
 /* PARAGRAPH ELEMENTS */
 
 p {
-    font-family: perpetua, Rockwell Extra Bold;
+    font-family: FreeMono, monospace;
     text-align: justify;
     letter-spacing: 1px;
     font-size: 20px;
@@ -122,7 +122,7 @@ p {
 /* CENTER ALING ELEMENTS */
 
 center {
-    font-family: Perpetua, Rockwell Extra Bold;
+    font-family: FreeMono, monospace;
     text-align: center;
     letter-spacing: 1px;
     font-size: 20px;
