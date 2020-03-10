@@ -5,11 +5,23 @@
     <title>Colemen's Portfolio</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./css/portfolio.css">
+    <link href='https://fonts.googleapis.com/css?family=Baloo Chettan 2' rel='stylesheet'>
+    <script src="js/portfolio.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> <!-- We use a little bit of jQuery on this site now -->
+
 </head>
 
 <!-- BODY -->
 
 <body class="background">
+
+<!-- Fade in effect -->
+<script>
+    document.body.className += ' fade-out';
+    $(function() {
+        $('body').removeClass('fade-out');
+    });
+</script>
 
     <!-- NAV BAR -->
 
@@ -17,7 +29,7 @@
         <a class="active" href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#github">GitHub</a>
-        <a href="#contact">Contact</a>
+     <!--<a href="#contact">Contact</a>-->
     </div>
 
     <!-- HOME -->
@@ -38,17 +50,104 @@
         <p>
             <strong>
                         <center>
-                            My name is Colemen Smith. Welcome to my portfolio webite. On it, I will tell you about my background and experience.<br>
+                            My name is Colemen Smith. Welcome to my portfolio website. On it, I will tell you about my background and experience.<br>
                             <br>Thank you for stopping by and enjoy!
                         </center>
                     </strong>
         </p>
     </div>
 
+
+    <!-- SLIDE SHOW -->
+
+    <div id="slideshow">
+        <div id="slideshow_background">
+            <div id="slideshow_container">
+
+                    <div class="mySlides fade">
+                        <div class="slide_number">1 / 4</div>
+                        <img class="slide_show_images" src="img/trifecta.png" style="width: 100%;">
+                        <div class="text">I am a full-stack software developer,<br> trained in:<br> HTML, CSS, JavaScript,</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="slide_number">2 / 4</div>
+                        <img class="slide_show_images" src="img/python.jpeg" style="width:100%">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="slide_number">3 / 4</div>
+                        <img class="slide_show_images" src="img/c_net.png" style="width: 100%;">
+                        <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="slide_number"> 4 / 4</div>
+                        <img class="slide_show_images" src="img/sql.png" style="width: 100%;">
+                        <div class="text">back end development, databases and SQL.</div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+
+            <div style="text-align: center;">
+                
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JS file included in this file to ensure it is given precedence. This covers the slide show -->
+
+    <script>
+
+        var slideIndex = 1;
+        
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex +=n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex +=n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className = " active";
+        }
+
+    </script>
+
+    <!-- /SLIDE SHOW -->
+
+
     <!-- ABOUT SECTION -->
     <div class="row" id="about">
         <div class="column_2">
             <!--left column-->
+            <br><br><br>
             <img src="./img/typing.jpg" alt="laptop">
         </div>
 
@@ -56,7 +155,7 @@
             <!--right column-->
             <h1>About</h1>
             <p>I am an aspiring software developer who loves coding. I enjoy socializing with people and learning new things!<br><br> I am an attendee of the <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s Software Developer
-                Boot Camp, am being trained in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more.<br><br> I am training to be a full-stack developer and would love to work with you on your project. <a href="#contact">Contact</a>                me below!
+                Boot Camp. I am being trained in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more.<br><br> I am training to be a full-stack developer and would love to work with you on your project. <a href="#contact">Contact</a>                me below!
             </p>
         </div>
     </div>
@@ -65,6 +164,7 @@
     <div class="row" id="github">
         <div class="column_1">
             <!--LEFT COLUMN -->
+            <br><br>
             <h1>GitHub</h1>
             <p>You can view my coding projects on my GitHub profile here:<br>
                 <center><a href="https://github.com/ColemenSmith" target="_blank">Colemen Smith GitHub</a></center>
@@ -72,30 +172,34 @@
         </div>
         <div class="column_2">
             <!--RIGHT COLUMN-->
+            <br><br><br>
             <a href="https://github.com/ColemenSmith" target="_blank"><img src="./img/github.jpg" alt="GitHub"></a>
         </div>
     </div>
 
     <!-- CONTACT SECTION -->
-    <div class="row" id="contact">
-        <div class="column_3">
-            <!-- CONTACT IMAGE, LEFT COLUMN -->
-            <img src="./img/email.jpg" alt="Email Me">
-        </div>
-        <div class="column_1">
-            <!-- CONTACT FORM, RIGHT COLUMN-->
-            <h1>Contact</h1>
-            <form action="" method="GET">
-                <!-- THIS SPECIFIES WHERE TO SEND THE FORM DATA AND HOW -->
-                <label>Name:</label>
-                <input type="text" placeholder="Please enter your name here">
-                <label>Email:</label>
-                <input type="text" id="email" name="Email" placeholder="Please enter your email here">
-                <label>Message:</label>
-                <input type="text" id="message" name="Message" placeholder="Please write your message here">
-                <input type="submit" value="Submit">
-            </form>
-        </div>
+
+    <div class="contact">
+        <button onclick="openForm()" class="pop-up-button">CONTACT</button>
+    </div>
+    <div class="form-popup" id="myForm">
+        <!-- CONTACT FORM, RIGHT COLUMN-->
+        <h1>Contact</h1>
+        <form action="https://formspree.io/smithcolemen@gmail.com" method="POST" class="form-container">
+            <!-- THIS SPECIFIES WHERE TO SEND THE FORM DATA AND HOW -->
+
+            <label for="name"><b>Name:</b></label>
+            <input type="text" placeholder="Please enter your name here" required>
+
+            <label for="email"><b>Email:</b></label>
+            <input type="text" id="email" name="Email" placeholder="Please enter your email here" required>
+
+            <label for="message"><b>Message:</b></label>
+            <input type="text" id="message" name="Message" placeholder="Please write your message here" required>
+
+            <button type="submit" class="btn">SUBMIT</button>
+            <button type="submit" class="btn cancel" onclick="closeForm()">CLOSE</button>
+        </form>
     </div>
 
     <!--FOOTER SECTION -->
